@@ -1,4 +1,3 @@
-
 <?php
 // Database connection using Railway Environment Variables
 $conn = new mysqli(
