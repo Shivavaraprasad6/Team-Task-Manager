@@ -1,11 +1,11 @@
 <?php
-// Database connection using Railway Environment Variables
+// Database connection using Railway Variable NAMES
 $conn = new mysqli(
-    getenv('mysql.railway.internal'), 
-    getenv('root'), 
-    getenv('odWpILyaYBuvfYWZOVPVxZDlcZDMRNXV'), 
-    getenv('railway'), 
-    getenv('3306')
+    getenv('MYSQLHOST'), 
+    getenv('MYSQLUSER'), 
+    getenv('MYSQLPASSWORD'), 
+    getenv('MYSQLDATABASE'), 
+    getenv('MYSQLPORT')
 );
 
 // Check connection
