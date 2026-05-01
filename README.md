@@ -31,7 +31,7 @@ Includes a full workflow for password recovery and resetting.
   * **Project Creation:** Admins can create and name new projects to categorize tasks effectively.
   * **Project Tracking:** Tracks which user created each project for organizational accountability.
 
-* **Task Management**[cite: 3, 10]
+* **Task Management**
   * **Task Creation:** Detailed task entry including title, description, and specific deadlines.
   * **Assignment System:** Tasks are assigned to specific users and linked to existing projects.
   * **Status Updates:** Users can update task statuses between "Pending," "In Progress," and "Completed".
@@ -81,15 +81,22 @@ Team-Task-Manager/
   * Use the following command to download the project:
   * `git clone https://github.com/Shivavaraprasad6/Team-Task-Manager.git`
 
-* **2. Database Configuration**
-  * Create a MySQL database named `if0_41795929_taskm` in your hosting panel or local server.
-  * Import the `team_task_manager.sql` file via phpMyAdmin to automatically generate the `users`, `projects`, and `tasks` tables.
+* **2. Deployment Architecture (Railway)**
+  * The application is now optimized for cloud-native deployment using the following configuration:
+  * Build Engine: Migrated from Railpack to Nixpacks to support custom PHP extensions.
+  * Runtime: PHP 8.4 with automated dependency resolution.
+  * Environment Handshake: Securely utilizes getenv() to connect with the provisioned MySQL instance
 
-* **3. Update Connection**
-  * Open `config.php` in a text editor.
-  * Update the `$servername`, `$username`, `$password`, and `$dbname` variables with your specific database credentials.
+* **3. Database Configuration**
+  * Import team_task_manager.sql into your MySQL server to generate the users, projects, and tasks tables.
 
-* **4. Run the App**
+* **4. Environmental cloud**
+  * To link your application to the database securely, add these variables to your hosting environment:
+  * Database Credentials: MYSQLHOST, MYSQLUSER, MYSQLPASSWORD, MYSQLDATABASE, MYSQLPORT
+  * PHP Driver: NIXPACKS_PHP_EXTENSIONS: mysqli
+  
+
+* **5. Run the App**
   * **Local:** Place the project folder inside your local server directory (e.g., `htdocs` for XAMPP or `www` for WAMP).
   * **Remote:** Upload all files to the `htdocs` folder of your InfinityFree account via FTP or File Manager.
   * **Launch:** Open your web browser and navigate to `index.php` (e.g., `http://localhost/Team-Task-Manager/index.php`).
@@ -108,6 +115,8 @@ Team-Task-Manager/
   * `/create_task.php` - Form to assign tasks to members
   * `/tasks.php` - View all tasks and update their status
 ------
+
+
 
 
 
